@@ -1,0 +1,78 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg--color: #F3EFEC;
+  --text-color: #312A4E;
+  --accent-color: #FFAB6B;
+  --main-font: Raleway;
+  --accent-font: 'STIX Two Text';
+}
+
+.page {
+  min-inline-size: 360px;
+  margin: 0;
+  background-color: var(--bg--color,#F3EFEC);
+  color: var(--text-color, #312A4E);
+  font-family: var(--main-font, Raleway);
+}
+
+p,
+h1,
+h2,
+h3,
+blockquote,
+ul,
+ol,
+li,
+figure {
+  margin: 0;
+}
+
+.content-section {
+  padding: 0 5vi;
+}
+
+.heading {
+  font-family: var(--accent-font, 'STIX Two Text');
+  line-height: 90%;
+  font-weight: 600;
+  text-align: center;
+}
+
+.header {
+  padding-block-start: 10%;
+
+}
+
+.header__title {
+  font-size: clamp(3.75rem, 2.5rem + 5.5556vw, 7.5rem);
+  margin-block-end: 40px;
+}
+
+.content__title {
+  font-size: 30px;
+  margin: 7% 0 2.5%;
+}
+
+.content__text-block {
+  font-size: 18px;
+}
+
+.content__text-block .content__paragraph:not(:last-of-type) {
+  margin-block-end: 1.5em;
+}
+ 
+.content__paragraph a { 
+  color: inherit;
+}
+
+.content__blockquote {
+  inline-size: 75%;
+  font-style: italic;
+  margin: 0 auto 1.5em;
+  line-height: 2;
+}
