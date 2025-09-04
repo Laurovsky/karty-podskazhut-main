@@ -1,22 +1,28 @@
+:root {
+  --bg--color: #f3efec;
+  --text-color: #312a4e;
+  --accent-color: #ffab6b;
+  --main-font: Raleway;
+  --accent-font: "STIX Two Text";
+}
+
+.theme_dark {
+  --bg-color: #171717;
+  --text-color: #b3b3b3;
+  --accent-color: transparent;
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-:root {
-  --bg--color: #F3EFEC;
-  --text-color: #312A4E;
-  --accent-color: #FFAB6B;
-  --main-font: Raleway;
-  --accent-font: 'STIX Two Text';
-}
-
 .page {
   min-inline-size: 360px;
   margin: 0;
-  background-color: var(--bg--color,#F3EFEC);
-  color: var(--text-color, #312A4E);
+  background-color: var(--bg--color, #f3efec);
+  color: var(--text-color, #312a4e);
   font-family: var(--main-font, Raleway);
 }
 
@@ -32,12 +38,26 @@ figure {
   margin: 0;
 }
 
+a:focus,
+button:focus {
+  outline: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+button:disabled {
+  pointer-events: none;
+}
+
 .content-section {
   padding: 0 5vi;
 }
 
 .heading {
-  font-family: var(--accent-font, 'STIX Two Text');
+  font-family: var(--accent-font, serif);
   line-height: 90%;
   font-weight: 600;
   text-align: center;
@@ -45,7 +65,6 @@ figure {
 
 .header {
   padding-block-start: 10%;
-
 }
 
 .header__title {
@@ -65,8 +84,8 @@ figure {
 .content__text-block .content__paragraph:not(:last-of-type) {
   margin-block-end: 1.5em;
 }
- 
-.content__paragraph a { 
+
+.content__paragraph a {
   color: inherit;
 }
 
@@ -83,16 +102,15 @@ figure {
   /* position: relative; */
 }
 
-.content__list li{
+.content__list li {
   /* margin-left: 40px; */
   margin-inline-start: 40px;
   position: relative;
-
 }
 
 /* надо сверяться с решением, есть вопроси */
-.content__list li::before{
-  content: url('../images/marker-light.svg');
+.content__list li::before {
+  content: url("../images/marker-light.svg");
   width: 15px;
   height: 15px;
   background-position: center;
@@ -111,4 +129,128 @@ figure {
   margin-right: 1px;
   /* посмотри про инлайн блок тоже в ответе */
   display: inline-block;
+}
+
+.contetnt__picture {
+  inline-size: 100%;
+}
+
+.content_figure {
+  position: relative;
+  inline-size: calc(100% + 10vi);
+  margin: 7% auto;
+  inset-inline-end: 5vi;
+}
+
+.content__picture-caption {
+  border-block-end: 1px, solid, currentColor;
+  padding: 20px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.content__card {
+  margin-block-start: 7%;
+  aspect-ratio: 4/3;
+  border: 1px solid currentColor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content__card-title {
+  font-size: 60px;
+}
+
+.content__card-subtitle {
+  font-size: 18px;
+}
+
+.colored-text {
+  position: relative;
+  display: inline-block;
+}
+
+.colored-text::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inline-size: calc(100% + 8px);
+  block-size: 0.5ch;
+  background-color: var(--accent-color);
+  inset-inline-end: 0.3ch;
+  inset-inline-start: -4px;
+}
+
+.header__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-block-start: 1px solid currentColor;
+  border-block-end: 1px solid currentColor;
+  padding-block: 20px;
+}
+
+.header__theme-toggler {
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.header__theme-button {
+  position: relative;
+  border: none;
+  padding: 0;
+  color: currentColor;
+  font-family: inherit;
+  font-size: 18px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.header__theme-button:hover {
+  text-decoration: underline;
+}
+
+.header__theme-button_is-active {
+  font-weight: 700;
+}
+
+.header__theme-button_is-active::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inline-size: calc(100% + 8px);
+  block-size: 0.5ch;
+  background-color: var(--accent-color);
+  inset-block-end: 0.3ch;
+  inset-inline-start: -4px;
+}
+
+.footer {
+  margin-block-start: 10%;
+  border-block-start: 1px solid currentColor;
+  padding: 2.5%;
+  text-align: center;
+}
+
+.footer__copyright {
+  font-size: 18px;
+}
+
+.theme_dark .colored-text::after {
+  background-image: url(../images/pattern.svg);
+}
+.theme_dark .header__theme-button_is-active::after {
+  background-image: url(../images/pattern.svg);
+}
+.theme_dark
+  .content__text-block_type_first-lettered
+  .content__paragraph:first-of-type::first-letter {
+  border: 1px solid currentColor;
+}
+.theme_dark .content__list li::before {
+  background-image: url(../images/marker-dark.svg);
 }
