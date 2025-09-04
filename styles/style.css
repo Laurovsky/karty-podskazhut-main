@@ -1,5 +1,5 @@
 :root {
-  --bg--color: #f3efec;
+  --bg-color: #f3efec;
   --text-color: #312a4e;
   --accent-color: #ffab6b;
   --main-font: Raleway;
@@ -21,7 +21,7 @@
 .page {
   min-inline-size: 360px;
   margin: 0;
-  background-color: var(--bg--color, #f3efec);
+  background-color: var(--bg-color, #f3efec);
   color: var(--text-color, #312a4e);
   font-family: var(--main-font, Raleway);
 }
@@ -131,7 +131,7 @@ button:disabled {
   display: inline-block;
 }
 
-.contetnt__picture {
+.content__picture {
   inline-size: 100%;
 }
 
@@ -247,8 +247,7 @@ button:disabled {
   background-image: url(../images/pattern.svg);
 }
 .theme_dark
-  .content__text-block_type_first-lettered
-  .content__paragraph:first-of-type::first-letter {
+  .content__paragraph.content__text-block_type_first-lettered::first-letter {
   border: 1px solid currentColor;
 }
 .theme_dark .content__list li::before {
