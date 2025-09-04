@@ -76,3 +76,39 @@ figure {
   margin: 0 auto 1.5em;
   line-height: 2;
 }
+
+.content__list {
+  list-style-type: none;
+  padding: 0;
+  /* position: relative; */
+}
+
+.content__list li{
+  /* margin-left: 40px; */
+  margin-inline-start: 40px;
+  position: relative;
+
+}
+
+/* надо сверяться с решением, есть вопроси */
+.content__list li::before{
+  content: url('../images/marker-light.svg');
+  width: 15px;
+  height: 15px;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -25px;
+}
+
+.content__list li:not(:last-of-type) {
+  margin-block-end: 10px;
+}
+
+.content__paragraph.content__text-block_type_first-lettered:first-letter {
+  background-color: var(--accent-color);
+  padding: 0 4px;
+  margin-right: 1px;
+  /* посмотри про инлайн блок тоже в ответе */
+  display: inline-block;
+}
