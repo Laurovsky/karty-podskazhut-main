@@ -110,13 +110,17 @@ button:disabled {
 
 /* надо сверяться с решением, есть вопроси */
 .content__list li::before {
-  content: url("../images/marker-light.svg");
-  width: 15px;
-  height: 15px;
-  background-position: center;
-  background-repeat: no-repeat;
+  content: "";
   position: absolute;
-  left: -25px;
+  inline-size: 15px;
+  block-size: 15px;
+  margin-block-start: -7.5px;
+  background-image: url("../images/marker-light.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  inset-block-start: 50%;
+  inset-inline-start: -25px;
 }
 
 .content__list li:not(:last-of-type) {
@@ -179,7 +183,7 @@ button:disabled {
   inline-size: calc(100% + 8px);
   block-size: 0.5ch;
   background-color: var(--accent-color);
-  inset-inline-end: 0.3ch;
+  inset-block-end: 8px;
   inset-inline-start: -4px;
 }
 
@@ -250,6 +254,7 @@ button:disabled {
   .content__paragraph.content__text-block_type_first-lettered::first-letter {
   border: 1px solid currentColor;
 }
-.theme_dark .content__list li::before {
+.theme_dark 
+  .content__list li::before {
   background-image: url(../images/marker-dark.svg);
 }
